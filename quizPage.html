@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/quizPage.css" />
+    <link rel="stylesheet" href="./css/Animations/animations.css" />
+    <link rel="stylesheet" href="./css/Components/answerModal.css" />
+  </head>
+  <body>
+    <main>
+      <div class="questionBlock">
+        <h1 class="questionHeader"></h1>
+        <p class="question"></p>
+        <div class="answers"></div>
+      </div>
+      <img id="questionImage" alt="Ilustration" />
+    </main>
+    <dialog>
+      <section>
+        <h1></h1>
+        <p></p>
+        <button data-close-modal>Supratau</button>
+      </section>
+    </dialog>
+
+    <footer>
+      <button
+        class="basicButton nextQuestion"
+        disabled
+        onclick="nextQuestion()"
+      >
+        Kitas klausimas
+      </button>
+    </footer>
+  </body>
+  <script type="module" src="./js/questions.js"></script>
+  <script type="module" src="./js/selectOptions.js"></script>
+  <script type="module" src="./js/quizPage.js"></script>
+</html>

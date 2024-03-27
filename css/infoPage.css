@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Gabarito:wght@400;800&display=swap");
+
+:root {
+  --blue: #543fff;
+  --pink: #f13ea7;
+  --black: #372d2d;
+
+  --mainFont: "Gabarito", cursive;
+}
+
+a {
+  all: unset;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("../assets/images/quiz_background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  height: 100vh;
+
+  font-family: var(--mainFont);
+}
+
+main {
+  height: 85vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+footer {
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: auto;
+  height: auto;
+  max-height: 70vh;
+  margin-top: 75px;
+}
+
+.questionHeader,
+.mainText {
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--blue);
+}
+
+.question,
+.message {
+  font-size: 1.2rem;
+  color: var(--black);
+  max-width: 40vw;
+}
+
+.basicButton {
+  background-color: var(--pink);
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  background-color: var(--blue);
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  border-radius: 10px;
+  border: none;
+}
+
+.smallerButtons {
+  width: 15vw;
+  min-width: 150px;
+  max-width: 200px;
+  height: 5vh;
+  min-height: 50px;
+  max-height: 200px;
+}

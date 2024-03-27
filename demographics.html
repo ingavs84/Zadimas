@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demografinės Informacijos Anketa</title>
+    <link rel="stylesheet" href="./css/generalStyles.css"> <!-- Koreguokite kelio nurodymą pagal poreikį -->
+    <link rel="stylesheet" href="./css/demographicsPage.css"> <!-- Koreguokite kelio nurodymą pagal poreikį -->
+</head>
+<body>
+    <div class="logo">
+        <img src="assets/images/logo.png" alt="logo" style="width: 130px; height: auto;"/>
+    </div>
+    <div class="container">
+        <h2 style="margin-top: 20px; margin-bottom: 30px;" >Prašome užpildyti savo informaciją</h2>
+        <form id="demographicForm">
+            <label for="age">Amžius:</label>
+            <input type="number" id="age" name="age" pattern="[0-9]+([.,][0-9]+)?" style="margin-bottom: 20px;" required>
+            
+            <label for="gender">Lytis:</label>
+            <select id="gender" name="gender" style="margin-bottom: 20px;" required>
+                <option value="">Pasirinkite...</option>
+                <option value="male">Vyras</option>
+                <option value="female">Moteris</option>
+                <option value="other">Kita</option>
+                <option value="prefer_not_to_say">Nenorėčiau sakyti</option>
+            </select>
+            
+            <label for="city">Miestas:</label>
+            <input type="text" id="city" name="city" style="margin-bottom: 20px;" required>
+            
+            <label for="profession">Profesija:</label>
+            <input type="text" id="profession" name="profession" style="margin-bottom: 20px;" required>
+            
+            <label for="education">Išsilavinimas:</label>
+            <select id="education" name="education" style="margin-bottom: 20px;" required>
+                <option value="">Pasirinkite...</option>
+                <option value="Aukštasis universitetinis (daktaro laipsnis)">Aukštasis universitetinis (daktaro laipsnis)</option>
+                <option value="Aukštasis universitetinis (magistro laipsnis)">Aukštasis universitetinis (magistro laipsnis)</option>
+                <option value="Aukštasis universitetinis (bakalauro laispnis)">Aukštasis universitetinis (bakalauro laispnis)</option>
+                <option value="Aukštasis koleginis išsilavinimas">Aukštasis koleginis išsilavinimas (profesinis bakalauras)</option>
+                <option value="Aukštesnysis išsilavinimas">Aukštesnysis išsilavinimas</option>
+                <option value="Specialusis vidurinis išsilavinimas">Specialusis vidurinis išsilavinimas</option>
+                <option value="Vidurinis išsilavinimas">Vidurinis išsilavinimas</option>
+                <option value="Pagrindinis išsilavinimas">Pagrindinis išsilavinimas</option>
+                <option value="Pradinis išsilavinimas">Pradinis išsilavinimas</option>
+                <option value="Nereglamentuojamas">Nereglamentuojamas</option>
+            </select>
+            
+            <label for="field_of_study">Studijų sritis:</label>
+            <select id="field_of_study" name="field_of_study" style="margin-bottom: 20px;" required>
+                <option value="">Pasirinkite...</option>
+                <option value="Gamtos mokslai">Gamtos mokslai</option>
+                <option value="Technologijos mokslai">Technologijos mokslai</option>
+                <option value="Medicinos ir sveikatos mokslai">Medicinos ir sveikatos mokslai</option>
+                <option value="Žemės ūkio mokslai">Žemės ūkio mokslai</option>
+                <option value="Socialiniai mokslai">Socialiniai mokslai</option>
+                <option value="Humanitariniai mokslai">Humanitariniai mokslai</option>
+                <option value="Scenos ir ekrano menai">Scenos ir ekrano menai</option>
+                <option value="Vaizduojamieji menai">Vaizduojamieji menai</option>
+                <option value="Kita">Kita</option>
+            </select>
+            
+            <label for="interest_in_tech">Domėjimasis technologijomis:</label>
+            <select id="interest_in_tech" name="interest_in_tech" style="margin-bottom: 20px;" required>
+                <option value="">Pasirinkite...</option>
+                <option value="very_interested">Labai domiuosi</option>
+                <option value="somewhat_interested">Šiek tiek domiuosi</option>
+                <option value="not_interested">Nedomiuosi</option>
+            </select>
+            
+            <label for="ai_experience">Patirtis su DI:</label>
+            <select id="ai_experience" name="ai_experience" style="margin-bottom: 20px;" required>
+                <option value="">Pasirinkite...</option>
+                <option value="no_experience">Be patirties</option>
+                <option value="beginner">Pradedantysis</option>
+                <option value="intermediate">Pažengęs</option>
+                <option value="advanced">Ekspertas</option>
+            </select>
+            
+            <label for="attitude_towards_ai">Požiūris į DI:</label>
+            <select id="attitude_towards_ai" name="attitude_towards_ai" style="margin-bottom: 20px;" required>
+                <option value="">Pasirinkite...</option>
+                <option value="positive">Teigiamas</option>
+                <option value="neutral">Neutralus</option>
+                <option value="negative">Neigiamas</option>
+            </select>
+
+            <a href="./select.html">
+                <button class="startButton" type="button" onclick="submitDemographics()" style="font-family: Gabarito; font-weight: bold; margin-top: 20px;">
+                  <img src="assets/icons/controller.png" alt="Controller" style="width: 30px; height: auto;"/>
+                  Dabar jau tikrai žaisti
+                </button>
+              </a>
+            
+        </form>
+    </div>
+    <script src="./js/demographics.js"></script> <!-- Įsitikinkite, kad šis kelias atitinka jūsų failų struktūrą -->
+</body>
+</html>

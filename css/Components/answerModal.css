@@ -1,0 +1,82 @@
+dialog {
+  width: 35vw;
+  height: fit-content;
+
+  border: none;
+  border-radius: 10px;
+
+  padding: 20px 40px;
+
+  color: white;
+
+  animation-name: fadeInExtra;
+  animation-duration: 0.8s;
+  animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+  & * {
+    margin: 0;
+    padding: 0;
+  }
+
+  & section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  & h1 {
+    text-align: center;
+    padding: 15px 0px;
+
+    font-size: 2.5rem;
+  }
+
+  & p {
+    font-size: 1.2rem;
+    margin: 20px 0px;
+  }
+
+  & button {
+    padding: 10px 30px;
+    margin: 20px 0 0 0;
+
+    border: none;
+    border-radius: 20px;
+
+    font-family: var(--mainFont);
+    font-weight: bold;
+    font-size: 1.4rem;
+
+    box-shadow: 2px 4px 8px 0px rgba(55, 55, 55, 0.22);
+    transition: transform 0.5s ease-in-out, filter 0.5s ease-out;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-3px);
+      filter: brightness(120%);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &.false::backdrop {
+    background: rgb(212, 146, 146);
+    opacity: 0.8;
+  }
+
+  &.correct::backdrop {
+    background: #94d4ab;
+    opacity: 0.8;
+  }
+}
+
+dialog.false {
+  background-color: #ff5757;
+}
+
+dialog.correct {
+  background-color: #2aa859;
+}

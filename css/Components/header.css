@@ -1,0 +1,53 @@
+header {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(5, 1fr);
+
+  align-items: center;
+  text-align: center;
+
+  height: 15vh;
+  overflow: hidden;
+
+  & img {
+    max-width: 100px;
+  }
+
+  & a {
+    color: var(--blue);
+    font-family: var(--mainFont);
+    font-weight: bold;
+    font-size: 1.3rem;
+    transition: background-color 0.3s, color 0.3s;
+
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--pink);
+    }
+  }
+
+  @media (max-width: 600px) {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    height: 10vh;
+    margin-bottom: 40px;
+
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.208);
+
+    & .logo {
+      display: none;
+    }
+
+    & a {
+      font-size: 1rem;
+
+      &:hover {
+        background-color: var(--blue);
+      }
+    }
+  }
+}
