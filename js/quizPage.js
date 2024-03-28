@@ -215,7 +215,7 @@ function loadResults() {
 // Function to submit quiz data to Google Apps Script
 async function submitQuizData(data) {
   try {
-    const response = await fetch('https://script.google.com/macros/s/AKfycbweGpLhtuy7QiYnGBZ8SYd3D7AJ6IG6gNItLgPGXvmsb7ppBJKbXtNyUXCPNqgpjqxFWw/exec', {
+    const response = await fetch('https://cors-anywhere.herokuapp.com/https://script.google.com/macros/s/AKfycbweGpLhtuy7QiYnGBZ8SYd3D7AJ6IG6gNItLgPGXvmsb7ppBJKbXtNyUXCPNqgpjqxFWw/exec', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -232,6 +232,7 @@ async function submitQuizData(data) {
     console.error('Error submitting data:', error);
   }
 }
+
 
   
 
