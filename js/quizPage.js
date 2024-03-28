@@ -139,12 +139,17 @@ function loadResults() {
   // Retrieve demographic data from localStorage
   const demographicsData = JSON.parse(localStorage.getItem('demographicsData')) || {};
 
-  // Now demographicsData.age, demographicsData.gender, etc., are available to use.
-  
+  // Generate or retrieve a unique PlayerID for each session
+  let playerID = localStorage.getItem('playerID');
+  if (!playerID) {
+    playerID = generateUUID(); // Generate a new UUID if one doesn't exist
+    localStorage.setItem('playerID', playerID); // Store it for future use
+  }
+
   const resultsData = {
-      // Assuming demographicsData is flat and matches Google Sheet's columns
-      ...demographicsData,
-      // Other properties to be included with each answer
+      playerID: playerID, // Include the unique player ID
+      selectedCategory: selectedCategory, // Use the selectedCategory variable that's been set globally
+      demographics: demographicsData,
       answers: playerAnswers.map(answer => ({
           questionText: answer.questionText,
           selectedAnswer: answer.selectedAnswer,
@@ -152,12 +157,11 @@ function loadResults() {
       })),
       finalScore: score
   };
-  
 
-  // Submit the combined data to Google Sheets
-  fetch('https://script.google.com/macros/s/AKfycbyBq1Z1NBWTmBUmbtJcrogmtYEYKWPbScMuDvl9OVNVOn2qQUGtwvdiNW3mZYdjZRIHBw/exec', {
+  // Replace 'YOUR_WEB_APP_URL' with the URL you copied after deploying your web app
+  fetch('https://script.google.com/macros/s/AKfycbwwd9VtZufoT6YOh3-7FBC8s9F98bgVLEWXCksshHnDaWi6gDcz3NPb6MGyVv2xPe7p6w/exec', {
       method: 'POST',
-      mode: 'no-cors',
+      mode: 'no-cors', // Note: Using 'no-cors' mode might limit your ability to read the response
       headers: {
           'Content-Type': 'application/json',
       },
@@ -166,63 +170,69 @@ function loadResults() {
   .then(() => console.log('Data successfully sent to Google Sheets', resultsData))
   .catch(error => console.error('Error sending data:', error));
 
-    const htmlBlock = document.querySelector(".questionBlock");
-    const resultHeader = document.createElement("h1");
-    resultHeader.classList.add("mainText");
-  
-    const message = document.createElement("p");
-    message.classList.add("message");
-  
-    const results = document.createElement("h1");
-    results.classList.add("mainText");
-    results.innerText = `${score} / ${Questions.length}`;
-  
-    if (score < Questions.length / 2) {
-      resultHeader.innerText = "Gaila, bet nepavyko";
-      resultHeader.style.color = redColor;
-  
-      message.innerText =
-        "Tau dar trūksta žinių dirbtinio intelekto sferoje. Galbūt norėtum išbandyti savo žinias iš naujo?";
-      results.style.color = redColor;
-    } else {
-      resultHeader.innerText = "Sveikiname!";
-      resultHeader.style.color = greenColor;
-      message.innerText =
-        "Tu įrodei, jog turi geras žinias apie dirbtinio intelekto taikymą verslo procesuose. Jeigu nori, gali žaidimą sužaisti dar kartą";
-      results.style.color = greenColor;
-    }
-  
-    const exitButtons = document.createElement("div");
-    exitButtons.classList.add("exitButtons");
-  
-    const restartLink = document.createElement("a");
-    const restartButton = document.createElement("button");
-    const homeLink = document.createElement("a");
-    const homeButton = document.createElement("button");
-  
-    restartLink.href = "select.html";
-    homeLink.href = "index.html";
-  
-    restartButton.classList.add("basicButton", "smallerButtons");
-    homeButton.classList.add("basicButton", "smallerButtons");
-  
-    restartButton.style.backgroundColor = redColor;
-    homeButton.style.backgroundColor = pinkColor;
-  
-    restartButton.innerText = "Žaisti dar kartą";
-    homeButton.innerText = "Grįžti atgal";
-  
-    restartLink.appendChild(restartButton);
-    exitButtons.appendChild(restartLink);
-  
-    homeLink.appendChild(homeButton);
-    exitButtons.appendChild(homeLink);
-  
-    htmlBlock.appendChild(resultHeader);
-    htmlBlock.appendChild(message);
-    htmlBlock.appendChild(results);
-    htmlBlock.appendChild(exitButtons);
+  // Below this line, keep your existing code that displays the quiz results to the user
+  const htmlBlock = document.querySelector(".questionBlock");
+  const resultHeader = document.createElement("h1");
+  resultHeader.classList.add("mainText");
+  const message = document.createElement("p");
+  message.classList.add("message");
+  const results = document.createElement("h1");
+  results.classList.add("mainText");
+  results.innerText = `${score} / ${Questions.length}`;
+
+  if (score < Questions.length / 2) {
+    resultHeader.innerText = "Gaila, bet nepavyko";
+    resultHeader.style.color = "#FF3131"; // Or use redColor variable if defined
+    message.innerText = "Tau dar trūksta žinių dirbtinio intelekto sferoje. Galbūt norėtum išbandyti savo žinias iš naujo?";
+    results.style.color = "#FF3131"; // Or use redColor variable if defined
+  } else {
+    resultHeader.innerText = "Sveikiname!";
+    resultHeader.style.color = "#1BB655"; // Or use greenColor variable if defined
+    message.innerText = "Tu įrodei, jog turi geras žinias apie dirbtinio intelekto taikymą verslo procesuose. Jeigu nori, gali žaidimą sužaisti dar kartą";
+    results.style.color = "#1BB655"; // Or use greenColor variable if defined
   }
+
+  const exitButtons = document.createElement("div");
+  exitButtons.classList.add("exitButtons");
+  const restartLink = document.createElement("a");
+  const restartButton = document.createElement("button");
+  const homeLink = document.createElement("a");
+  const homeButton = document.createElement("button");
+
+  restartLink.href = "select.html";
+  homeLink.href = "index.html";
+
+  restartButton.classList.add("basicButton", "smallerButtons");
+  homeButton.classList.add("basicButton", "smallerButtons");
+  restartButton.style.backgroundColor = "#FF3131"; // Or use redColor variable if defined
+  homeButton.style.backgroundColor = "#f13ea7"; // Or use pinkColor variable if defined
+
+  restartButton.innerText = "Žaisti dar kartą";
+  homeButton.innerText = "Grįžti atgal";
+
+  restartLink.appendChild(restartButton);
+  exitButtons.appendChild(restartLink);
+
+  homeLink.appendChild(homeButton);
+  exitButtons.appendChild(homeLink);
+
+  htmlBlock.appendChild(resultHeader);
+  htmlBlock.appendChild(message);
+  htmlBlock.appendChild(results);
+  htmlBlock.appendChild(exitButtons);
+}
+
+// Client-side UUID generation function
+function generateUUID() {
+    let d = new Date().getTime();
+    const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        const r = (d + Math.random() * 16) % 16 | 0;
+        d = Math.floor(d / 16);
+        return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+    });
+    return uuid;
+}
+
   
 
 function loadExplanation(selectedAnswer, isCorrect) {
