@@ -217,6 +217,7 @@ async function submitQuizData(data) {
   try {
     const response = await fetch('https://script.google.com/macros/s/AKfycbweGpLhtuy7QiYnGBZ8SYd3D7AJ6IG6gNItLgPGXvmsb7ppBJKbXtNyUXCPNqgpjqxFWw/exec', {
       method: 'POST',
+      mode: 'no-cors',
       headers: {
         'Content-Type': 'application/json',
       },
