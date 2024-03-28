@@ -14,10 +14,10 @@ document.addEventListener('DOMContentLoaded', function() {
             city: document.getElementById('city').value,
             profession: document.getElementById('profession').value,
             education: document.getElementById('education').value,
-            fieldOfStudy: document.getElementById('field_of_study').value,
-            interestInTech: document.getElementById('interest_in_tech').value,
-            aiExperience: document.getElementById('ai_experience').value,
-            attitudeTowardsAi: document.getElementById('attitude_towards_ai').value,
+            fieldOfStudy: document.getElementById('fieldOfStudy').value,
+            interestInTech: document.getElementById('interestInTech').value,
+            aiExperience: document.getElementById('aiExperience').value,
+            attitudeTowardsAi: document.getElementById('attitudeTowardsAi').value,
         };
 
         // Store the collected data into localStorage
