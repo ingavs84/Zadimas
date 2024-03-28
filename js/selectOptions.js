@@ -78,7 +78,7 @@ function loadData() {
       ekologiškesniems ir technologiškai pažangesniems automobiliams
       reiškia, kad gamykla turi greitai adaptuotis arba praras rinkos
       dalį.<br />`;
-      image.src = "../Zaidimas/assets/illustrations/Car.svg";
+      image.src = "/Zaidimas/assets/illustrations/Car.svg";
       break;
     case "Hotel":
       title.innerHTML = "Viešbutis";
@@ -91,7 +91,7 @@ function loadData() {
       <span class="bold">Kainodara:</span> Konkuruojant su kitais prabangiais viešbučiais ir naujomis viešnagės platformomis, viešbutis turi rasti optimalų kainų balansą.<br />
 
       <span class="bold">Technologijų integracija:</span> Naujų technologijų, tokių kaip virtuali realybė ar mobiliosios programėlės, naudojimas tampa vis svarbesnis svečių patirtims gerinti.<br />`;
-      image.src = "../Zaidimas/assets/illustrations/Hotel.svg";
+      image.src = "/Zaidimas/assets/illustrations/Hotel.svg";
       break;
     case "Eshop":
       title.innerHTML = "Elektroninės prekybos platforma";
@@ -102,7 +102,7 @@ function loadData() {
       <span class="bold">Konkurencija:</span> Nedidelė įmonė susiduria su konkurencija iš didesnių e-prekybos svetainių, kurios gali pasiūlyti platesnį prekių asortimentą ir mažesnes kainas.<br />
 
       <span class="bold">Sistemos stabilumas:</span> Užtikrinti, kad svetainė veikia be trikdžių ir sugeba tvarkyti vis didesnį srautą yra esminė sėkmės dalis.<br />`;
-      image.src = "../Zaidimas/assets/illustrations/Eshop.svg";
+      image.src = "/Zaidimas/assets/illustrations/Eshop.svg";
       break;
     case "Hospital":
       title.innerHTML = "Sveikatos priežiūros įstaiga";
@@ -113,7 +113,7 @@ function loadData() {
       <span class="bold">Duomenų analizė:</span> Didelis kiekis pacientų duomenų reikalauja efektyvaus analizės būdo, kad būtų galima geriau nustatyti ligos tendencijas ir individualizuoti gydymą.<br />
 
       <span class="bold">Diagnostikos tikslumas:</span> Klaidingos diagnozės ar praleisti simptomai gali turėti rimtų pasekmių pacientams.<br />`;
-      image.src = "../Zaidimas/assets/illustrations/Hospital.svg";
+      image.src = "/Zaidimas/assets/illustrations/Hospital.svg";
       break;
   }
 }
