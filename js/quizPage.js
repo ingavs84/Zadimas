@@ -36,7 +36,7 @@ const question = document.querySelector(".question");
 const options = document.querySelector(".answers");
 
 const image = document.querySelector("img");
-image.src = `./Zaidimas/assets/illustrations/${selectedCategory}2.svg`;
+image.src = `./assets/illustrations/${selectedCategory}2.svg`;
 
 
 const button = document.querySelector(".nextQuestion");
