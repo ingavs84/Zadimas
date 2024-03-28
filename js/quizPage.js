@@ -1,7 +1,10 @@
 import * as QuestionSets from "./questions.js";
 
-const urlParams = new URLSearchParams(window.location.search);
-const selectedCategory = urlParams.get("selected");
+/*const urlParams = new URLSearchParams(window.location.search);
+const selectedCategory = urlParams.get("selectedBusiness");*/
+const selectedCategory = sessionStorage.getItem('selectedBusiness');
+console.log(selectedCategory);
+console.log(selectedCategory);
 
 let playerAnswers = [];
 
@@ -10,6 +13,7 @@ let Questions;
 switch (selectedCategory) {
   case "Cars":
     Questions = QuestionSets.CarQuestions;
+    console.log(selectedCategory);
     break;
   case "Hotel":
     Questions = QuestionSets.HotelQuestions;
@@ -31,8 +35,9 @@ const header = document.querySelector(".questionHeader");
 const question = document.querySelector(".question");
 const options = document.querySelector(".answers");
 
-const image = document.querySelector("#questionImage");
-image.src = `/Zaidimas/assets/illustrations/${selectedCategory}2.svg`;
+const image = document.querySelector("img");
+image.src = `../assets/illustrations/${selectedCategory}2.svg`;
+
 
 const button = document.querySelector(".nextQuestion");
 
@@ -134,9 +139,12 @@ function loadResults() {
   // Retrieve demographic data from localStorage
   const demographicsData = JSON.parse(localStorage.getItem('demographicsData')) || {};
 
-  // Prepare the data to include demographics and player answers
+  // Now demographicsData.age, demographicsData.gender, etc., are available to use.
+  
   const resultsData = {
+      // Assuming demographicsData is flat and matches Google Sheet's columns
       ...demographicsData,
+      // Other properties to be included with each answer
       answers: playerAnswers.map(answer => ({
           questionText: answer.questionText,
           selectedAnswer: answer.selectedAnswer,
@@ -144,9 +152,10 @@ function loadResults() {
       })),
       finalScore: score
   };
+  
 
   // Submit the combined data to Google Sheets
-  fetch('https://script.google.com/macros/s/AKfycbxw2Nmbk1VoKNcqkxUgK06-Rw4al_QsV8wvRULf9SBFM6UyCRB04B1cNp6ZssS6Wyh84g/exec', {
+  fetch('https://script.google.com/macros/s/AKfycbyCikMKG_Bo5DWdOeJe-KPUX_YGP_PP36HsyteyX16m1puWmLpFybikU2IpGPc9fTxfHA/exec', {
       method: 'POST',
       mode: 'no-cors',
       headers: {
@@ -154,74 +163,67 @@ function loadResults() {
       },
       body: JSON.stringify(resultsData)
   })
-  .then(() => console.log('Data successfully sent to Google Sheets'))
+  .then(() => console.log('Data successfully sent to Google Sheets', resultsData))
   .catch(error => console.error('Error sending data:', error));
 
-  // Existing logic for displaying the results
-  const htmlBlock = document.querySelector(".questionBlock");
-  htmlBlock.innerHTML = '';
-
-  const resultHeader = document.createElement("h1");
-  resultHeader.classList.add("mainText");
-  const message = document.createElement("p");
-  message.classList.add("message");
-  const results = document.createElement("h1");
-  results.classList.add("mainText");
-  results.innerText = `${score} / ${Questions.length}`;
-
-  if (score < Questions.length / 2) {
-      resultHeader.innerText = "Gaila, bet jums nepavyko";
+    const htmlBlock = document.querySelector(".questionBlock");
+    const resultHeader = document.createElement("h1");
+    resultHeader.classList.add("mainText");
+  
+    const message = document.createElement("p");
+    message.classList.add("message");
+  
+    const results = document.createElement("h1");
+    results.classList.add("mainText");
+    results.innerText = `${score} / ${Questions.length}`;
+  
+    if (score < Questions.length / 2) {
+      resultHeader.innerText = "Gaila, bet nepavyko";
       resultHeader.style.color = redColor;
-      message.innerText = "Tau dar trūksta žinių dirbtinio intelekto sferoje. Galbūt norėtum išbandyti savo žinias iš naujo?";
+  
+      message.innerText =
+        "Tau dar trūksta žinių dirbtinio intelekto sferoje. Galbūt norėtum išbandyti savo žinias iš naujo?";
       results.style.color = redColor;
-  } else {
+    } else {
       resultHeader.innerText = "Sveikiname!";
       resultHeader.style.color = greenColor;
-      message.innerText = "Tu įrodei, jog turi geras žinias apie dirbtinio intelekto taikymą verslo procesuose. Jeigu nori, gali žaidimą sužaisti dar kartą";
+      message.innerText =
+        "Tu įrodei, jog turi geras žinias apie dirbtinio intelekto taikymą verslo procesuose. Jeigu nori, gali žaidimą sužaisti dar kartą";
       results.style.color = greenColor;
+    }
+  
+    const exitButtons = document.createElement("div");
+    exitButtons.classList.add("exitButtons");
+  
+    const restartLink = document.createElement("a");
+    const restartButton = document.createElement("button");
+    const homeLink = document.createElement("a");
+    const homeButton = document.createElement("button");
+  
+    restartLink.href = "select.html";
+    homeLink.href = "index.html";
+  
+    restartButton.classList.add("basicButton", "smallerButtons");
+    homeButton.classList.add("basicButton", "smallerButtons");
+  
+    restartButton.style.backgroundColor = redColor;
+    homeButton.style.backgroundColor = pinkColor;
+  
+    restartButton.innerText = "Žaisti dar kartą";
+    homeButton.innerText = "Grįžti atgal";
+  
+    restartLink.appendChild(restartButton);
+    exitButtons.appendChild(restartLink);
+  
+    homeLink.appendChild(homeButton);
+    exitButtons.appendChild(homeLink);
+  
+    htmlBlock.appendChild(resultHeader);
+    htmlBlock.appendChild(message);
+    htmlBlock.appendChild(results);
+    htmlBlock.appendChild(exitButtons);
   }
-
-  htmlBlock.appendChild(resultHeader);
-  htmlBlock.appendChild(message);
-  htmlBlock.appendChild(results);
-
-  // Add any additional logic for post-results display, such as restart or home navigation buttons
-}
-
-// Replace 'YOUR_SCRIPT_ID' with the actual ID from your Google Apps Script Web App.
-
-
-  const exitButtons = document.createElement("div");
-  exitButtons.classList.add("exitButtons");
-
-  const restartLink = document.createElement("a");
-  const restartButton = document.createElement("button");
-  const homeLink = document.createElement("a");
-  const homeButton = document.createElement("button");
-
-  restartLink.href = `/quizPage.html?selected=${selectedCategory}`;
-  homeLink.href = "index.html";
-
-  restartButton.classList.add("basicButton", "smallerButtons");
-  homeButton.classList.add("basicButton", "smallerButtons");
-
-  restartButton.style.backgroundColor = redColor;
-  homeButton.style.backgroundColor = pinkColor;
-
-  restartButton.innerText = "Žaisti dar kartą";
-  homeButton.innerText = "Grįžti atgal";
-
-  restartLink.appendChild(restartButton);
-  exitButtons.appendChild(restartLink);
-
-  homeLink.appendChild(homeButton);
-  exitButtons.appendChild(homeLink);
-
-  htmlBlock.appendChild(resultHeader);
-  htmlBlock.appendChild(message);
-  htmlBlock.appendChild(results);
-  htmlBlock.appendChild(exitButtons);
-
+  
 
 function loadExplanation(selectedAnswer, isCorrect) {
   const header = document.querySelector("dialog h1");

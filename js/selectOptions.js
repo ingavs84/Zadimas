@@ -1,47 +1,49 @@
-const carShopButton = document.querySelector(".card.carService");
-const hotelButton = document.querySelector(".card.hotel");
-const eShopButton = document.querySelector(".card.eShop");
-const hospitalButton = document.querySelector(".card.hospital");
+document.addEventListener('DOMContentLoaded', function() {
+  const carShopButton = document.querySelector(".card.carService");
+  const hotelButton = document.querySelector(".card.hotel");
+  const eShopButton = document.querySelector(".card.eShop");
+  const hospitalButton = document.querySelector(".card.hospital");
 
-const modal = document.querySelector("dialog");
-const closeButton = document.querySelector("[data-close-modal]");
-const startButton = document.querySelector(".start");
+  const modal = document.querySelector("dialog");
+  const closeButton = document.querySelector("[data-close-modal]");
+  const startButton = document.querySelector(".start");
 
-let selectedBusiness = "";
+  let selectedBusiness = "";
 
-carShopButton.addEventListener("click", () => {
-  selectedBusiness = "Cars";
-  loadData();
-  modal.showModal();
-});
+  carShopButton.addEventListener("click", () => {
+    selectedBusiness = "Cars";
+    loadData();
+    modal.showModal();
+  });
 
-hotelButton.addEventListener("click", () => {
-  selectedBusiness = "Hotel";
-  loadData();
-  modal.showModal();
-});
+  hotelButton.addEventListener("click", () => {
+    selectedBusiness = "Hotel";
+    loadData();
+    modal.showModal();
+  });
 
-eShopButton.addEventListener("click", () => {
-  selectedBusiness = "Eshop";
-  loadData();
-  modal.showModal();
-});
+  eShopButton.addEventListener("click", () => {
+    selectedBusiness = "Eshop";
+    loadData();
+    modal.showModal();
+  });
 
-hospitalButton.addEventListener("click", () => {
-  selectedBusiness = "Hospital";
-  loadData();
-  modal.showModal();
-});
+  hospitalButton.addEventListener("click", () => {
+    selectedBusiness = "Hospital";
+    loadData();
+    modal.showModal();
+  });
 
-closeButton.addEventListener("click", () => {
-  selectedBusiness = null;
-  loadData();
-  modal.close();
-});
+  closeButton.addEventListener("click", () => {
+    modal.close();
+  });
 
-startButton.addEventListener("click", () => {
-  document.location.href = `/quizPage.html?selected=${selectedBusiness}`;
-});
+  startButton.addEventListener("click", () => {
+    console.log("Selected Business:", selectedBusiness);
+    sessionStorage.setItem('selectedBusiness', selectedBusiness);
+    document.location.href = `/Zaidimas/quizPage.html?selected=${selectedBusiness}`;
+  });
+
 
 /* Description elements*/
 const title = document.querySelector(".description h1");
@@ -114,3 +116,4 @@ function loadData() {
       break;
   }
 }
+});
