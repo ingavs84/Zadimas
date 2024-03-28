@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('demographicsData', JSON.stringify(demographicsData));
 
         // Redirect to the quiz page or the next part of the game
-        window.location.href = './quizPage.html'; // Update this to the correct path if needed
+        window.location.href = './select.html'; // Update this to the correct path if needed
     });
 });
 
