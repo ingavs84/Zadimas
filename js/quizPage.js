@@ -139,102 +139,90 @@ function loadResults() {
   // Retrieve demographic data from localStorage
   const demographicsData = JSON.parse(localStorage.getItem('demographicsData')) || {};
 
-  // Combine demographic data with quiz results
+  // Now demographicsData.age, demographicsData.gender, etc., are available to use.
+  
   const resultsData = {
-    ...demographicsData,
-    answers: playerAnswers.map(answer => ({
-      questionText: answer.questionText,
-      selectedAnswer: answer.selectedAnswer,
-      isCorrect: answer.isCorrect
-    })),
-    finalScore: score
+      // Assuming demographicsData is flat and matches Google Sheet's columns
+      ...demographicsData,
+      // Other properties to be included with each answer
+      answers: playerAnswers.map(answer => ({
+          questionText: answer.questionText,
+          selectedAnswer: answer.selectedAnswer,
+          isCorrect: answer.isCorrect
+      })),
+      finalScore: score
   };
+  
 
-  // Submit the combined data to Google Sheets using a function
-  submitQuizData(resultsData);
-
-  // Display results to the user
-  const htmlBlock = document.querySelector(".questionBlock");
-  const resultHeader = document.createElement("h1");
-  resultHeader.classList.add("mainText");
-
-  const message = document.createElement("p");
-  message.classList.add("message");
-
-  const results = document.createElement("h1");
-  results.classList.add("mainText");
-  results.innerText = `${score} / ${Questions.length}`;
-
-  if (score < Questions.length / 2) {
-    resultHeader.innerText = "Gaila, bet nepavyko";
-    resultHeader.style.color = redColor;
-
-    message.innerText =
-      "Tau dar trūksta žinių dirbtinio intelekto sferoje. Galbūt norėtum išbandyti savo žinias iš naujo?";
-    results.style.color = redColor;
-  } else {
-    resultHeader.innerText = "Sveikiname!";
-    resultHeader.style.color = greenColor;
-    message.innerText =
-      "Tu įrodei, jog turi geras žinias apie dirbtinio intelekto taikymą verslo procesuose. Jeigu nori, gali žaidimą sužaisti dar kartą";
-    results.style.color = greenColor;
-  }
-
-  const exitButtons = document.createElement("div");
-  exitButtons.classList.add("exitButtons");
-
-  const restartLink = document.createElement("a");
-  const restartButton = document.createElement("button");
-  const homeLink = document.createElement("a");
-  const homeButton = document.createElement("button");
-
-  restartLink.href = "select.html";
-  homeLink.href = "index.html";
-
-  restartButton.classList.add("basicButton", "smallerButtons");
-  homeButton.classList.add("basicButton", "smallerButtons");
-
-  restartButton.style.backgroundColor = redColor;
-  homeButton.style.backgroundColor = pinkColor;
-
-  restartButton.innerText = "Žaisti dar kartą";
-  homeButton.innerText = "Grįžti atgal";
-
-  restartLink.appendChild(restartButton);
-  exitButtons.appendChild(restartLink);
-
-  homeLink.appendChild(homeButton);
-  exitButtons.appendChild(homeLink);
-
-  htmlBlock.appendChild(resultHeader);
-  htmlBlock.appendChild(message);
-  htmlBlock.appendChild(results);
-  htmlBlock.appendChild(exitButtons);
-}
-
-// Function to submit quiz data to Google Apps Script
-async function submitQuizData(data) {
-  try {
-    const response = await fetch('https://script.google.com/macros/s/AKfycbweGpLhtuy7QiYnGBZ8SYd3D7AJ6IG6gNItLgPGXvmsb7ppBJKbXtNyUXCPNqgpjqxFWw/exec', {
+  // Submit the combined data to Google Sheets
+  fetch('https://script.google.com/macros/s/AKfycbweGpLhtuy7QiYnGBZ8SYd3D7AJ6IG6gNItLgPGXvmsb7ppBJKbXtNyUXCPNqgpjqxFWw/exec', {
       method: 'POST',
-      mode: 'no-cors',
+      //mode: 'no-cors',
       headers: {
-        'Content-Type': 'application/json',
+          'Content-Type': 'application/json',
       },
-      body: JSON.stringify(data)
-    });
+      body: JSON.stringify(resultsData)
+  })
+  .then(() => console.log('Data successfully sent to Google Sheets', resultsData))
+  .catch(error => console.error('Error sending data:', error));
 
-    if (response.ok) {
-      console.log('Data successfully sent to Google Sheets', data);
+    const htmlBlock = document.querySelector(".questionBlock");
+    const resultHeader = document.createElement("h1");
+    resultHeader.classList.add("mainText");
+  
+    const message = document.createElement("p");
+    message.classList.add("message");
+  
+    const results = document.createElement("h1");
+    results.classList.add("mainText");
+    results.innerText = `${score} / ${Questions.length}`;
+  
+    if (score < Questions.length / 2) {
+      resultHeader.innerText = "Gaila, bet nepavyko";
+      resultHeader.style.color = redColor;
+  
+      message.innerText =
+        "Tau dar trūksta žinių dirbtinio intelekto sferoje. Galbūt norėtum išbandyti savo žinias iš naujo?";
+      results.style.color = redColor;
     } else {
-      console.error('Failed to submit data:', response.statusText);
+      resultHeader.innerText = "Sveikiname!";
+      resultHeader.style.color = greenColor;
+      message.innerText =
+        "Tu įrodei, jog turi geras žinias apie dirbtinio intelekto taikymą verslo procesuose. Jeigu nori, gali žaidimą sužaisti dar kartą";
+      results.style.color = greenColor;
     }
-  } catch (error) {
-    console.error('Error submitting data:', error);
+  
+    const exitButtons = document.createElement("div");
+    exitButtons.classList.add("exitButtons");
+  
+    const restartLink = document.createElement("a");
+    const restartButton = document.createElement("button");
+    const homeLink = document.createElement("a");
+    const homeButton = document.createElement("button");
+  
+    restartLink.href = "select.html";
+    homeLink.href = "index.html";
+  
+    restartButton.classList.add("basicButton", "smallerButtons");
+    homeButton.classList.add("basicButton", "smallerButtons");
+  
+    restartButton.style.backgroundColor = redColor;
+    homeButton.style.backgroundColor = pinkColor;
+  
+    restartButton.innerText = "Žaisti dar kartą";
+    homeButton.innerText = "Grįžti atgal";
+  
+    restartLink.appendChild(restartButton);
+    exitButtons.appendChild(restartLink);
+  
+    homeLink.appendChild(homeButton);
+    exitButtons.appendChild(homeLink);
+  
+    htmlBlock.appendChild(resultHeader);
+    htmlBlock.appendChild(message);
+    htmlBlock.appendChild(results);
+    htmlBlock.appendChild(exitButtons);
   }
-}
-
-
   
 
 function loadExplanation(selectedAnswer, isCorrect) {
