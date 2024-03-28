@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
   startButton.addEventListener("click", () => {
     console.log("Selected Business:", selectedBusiness);
     sessionStorage.setItem('selectedBusiness', selectedBusiness);
-    document.location.href = `..quizPage.html?selected=${selectedBusiness}`;
+    document.location.href = `../quizPage.html?selected=${selectedBusiness}`;
   });
 
 
