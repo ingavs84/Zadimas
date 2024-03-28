@@ -155,7 +155,7 @@ function loadResults() {
   
 
   // Submit the combined data to Google Sheets
-  fetch('https://script.google.com/macros/s/AKfycbxMfzQwVTn6ZCVlcLrZzchRjE_nrw7i_mUGdw211vrIFlG_JHhiGBtibHt64CkKrAT1Rw/exec', {
+  fetch('https://script.google.com/macros/s/AKfycbyG_JSKpCYlG6IsgQ-1vEkJf8hxqveJ712CaRFybhFQ6D-rrpz69ftXhuUt0inKKUfzhQ/exec', {
       method: 'POST',
       mode: 'no-cors',
       headers: {
