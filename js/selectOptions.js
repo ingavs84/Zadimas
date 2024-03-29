@@ -64,7 +64,7 @@ function loadData() {
       automobilių gamybos, tačiau pastaruoju metu pradėjo jausti
       spaudimą dėl greitai besikeičiančios rinkos.`;
       list.innerHTML = `<span class="bold">Gamybos efektyvumo sumažėjimas:</span>
-      Gamykloje pastebėta, kad automobilių gamybos laikas padidėjo ir
+      Gamykloje pastebėta, kad automobilių gamybos laikas padidėjo, o
       kainos auga.<br />
 
       <span class="bold">Kokybės kontrolės trūkumai:</span> Dažnai
@@ -72,11 +72,11 @@ function loadData() {
       pardavimo.<br />
 
       <span class="bold">Tiekimo grandinės problemos:</span> Dėl
-      užsakymų kiekio svyravimų, tiekimo grandinė nėra stabili.<br />
+      užsakymų kiekio svyravimų tiekimo grandinė nėra stabili.<br />
 
       <span class="bold">Rinkos pokyčiai:</span> Poreikis
       ekologiškesniems ir technologiškai pažangesniems automobiliams
-      reiškia, kad gamykla turi greitai adaptuotis arba praras rinkos
+      reiškia, kad gamykla turi greitai adaptuotis, kitaip praras rinkos
       dalį.<br />`;
       image.src = "./assets/illustrations/Car.svg";
       break;
@@ -101,7 +101,7 @@ function loadData() {
 
       <span class="bold">Konkurencija:</span> Nedidelė įmonė susiduria su konkurencija iš didesnių e-prekybos svetainių, kurios gali pasiūlyti platesnį prekių asortimentą ir mažesnes kainas.<br />
 
-      <span class="bold">Sistemos stabilumas:</span> Užtikrinti, kad svetainė veikia be trikdžių ir sugeba tvarkyti vis didesnį srautą yra esminė sėkmės dalis.<br />`;
+      <span class="bold">Sistemos stabilumas:</span> Užtikrinti, kad svetainė veikia be trikdžių ir sugeba tvarkyti vis didesnį srautą, yra esminė sėkmės dalis.<br />`;
       image.src = "./assets/illustrations/Eshop.svg";
       break;
     case "Hospital":
@@ -113,7 +113,7 @@ function loadData() {
       <span class="bold">Duomenų analizė:</span> Didelis kiekis pacientų duomenų reikalauja efektyvaus analizės būdo, kad būtų galima geriau nustatyti ligos tendencijas ir individualizuoti gydymą.<br />
 
       <span class="bold">Diagnostikos tikslumas:</span> Klaidingos diagnozės ar praleisti simptomai gali turėti rimtų pasekmių pacientams.<br />`;
-      image.src = "/Zaidimas/assets/illustrations/Hospital.svg";
+      image.src = "./assets/illustrations/Hospital.svg";
       break;
   }
 }

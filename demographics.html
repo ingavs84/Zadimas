@@ -4,58 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Demografinės Informacijos Anketa</title>
-    <link rel="stylesheet" href="./css/generalStyles.css"> <!-- Koreguokite kelio nurodymą pagal poreikį -->
-    <link rel="stylesheet" href="./css/demographicsPage.css"> <!-- Koreguokite kelio nurodymą pagal poreikį -->
+    <link rel="stylesheet" href="./css/generalStyles.css"> 
+    <link rel="stylesheet" href="./css/demographicsPage.css"> 
 </head>
 <body>
     <div class="logo">
         <img src="assets/images/logo.png" alt="logo" style="width: 130px; height: auto;"/>
     </div>
     <div class="container">
-        <h2 style="margin-top: 20px; margin-bottom: 30px;" >Prašome užpildyti savo informaciją</h2>
+        <h2 style="margin-top: 20px; margin-bottom: 10px;" >Pirmiausia, prašome atsakyti į kelis klausimus</h2>
+        <p style="font-size: 15px; font-style: italic; margin-bottom: 30px;">Jūsų pateikiami duomenys yra visiškai anoniminiai ir naudojami tik statistikos ir mokslinių tyrimų tikslais</p>
         <form id="demographicForm">
             <label for="age">Amžius:</label>
-            <input type="number" id="age" name="age" pattern="[0-9]+([.,][0-9]+)?" style="margin-bottom: 20px;" required>
+            <input type="number" id="age" name="age" min="0" max="130" pattern="[0-9]+([.,][0-9]+)?" style="margin-bottom: 20px;" required>
             
             <label for="gender">Lytis:</label>
             <select id="gender" name="gender" style="margin-bottom: 20px;" required>
                 <option value="">Pasirinkite...</option>
-                <option value="male">Vyras</option>
-                <option value="female">Moteris</option>
-                <option value="other">Kita</option>
-                <option value="prefer_not_to_say">Nenorėčiau sakyti</option>
+                <option value="Vyras">Vyras</option>
+                <option value="Moteris">Moteris</option>
+                <option value="Kita">Kita</option>
+                <option value="Nesakysiu">Norėčiau nesakyti</option>
             </select>
             
-            <label for="city">Miestas:</label>
-            <input type="text" id="city" name="city" style="margin-bottom: 20px;" required>
+            <label for="city">Miestas/gyvenvietė:</label>
+            <input type="text" id="city" name="city" maxlength="150" style="margin-bottom: 20px;" required>
             
             <label for="profession">Profesija:</label>
-            <input type="text" id="profession" name="profession" style="margin-bottom: 20px;" required>
+            <input type="text" id="profession" name="profession" maxlength="150" style="margin-bottom: 20px;" required>
             
             <label for="education">Išsilavinimas:</label>
             <select id="education" name="education" style="margin-bottom: 20px;" required>
                 <option value="">Pasirinkite...</option>
-                <option value="Aukštasis universitetinis (daktaro laipsnis)">Aukštasis universitetinis (daktaro laipsnis)</option>
-                <option value="Aukštasis universitetinis (magistro laipsnis)">Aukštasis universitetinis (magistro laipsnis)</option>
-                <option value="Aukštasis universitetinis (bakalauro laispnis)">Aukštasis universitetinis (bakalauro laispnis)</option>
-                <option value="Aukštasis koleginis išsilavinimas">Aukštasis koleginis išsilavinimas (profesinis bakalauras)</option>
-                <option value="Aukštesnysis išsilavinimas">Aukštesnysis išsilavinimas</option>
-                <option value="Specialusis vidurinis išsilavinimas">Specialusis vidurinis išsilavinimas</option>
-                <option value="Vidurinis išsilavinimas">Vidurinis išsilavinimas</option>
-                <option value="Pagrindinis išsilavinimas">Pagrindinis išsilavinimas</option>
-                <option value="Pradinis išsilavinimas">Pradinis išsilavinimas</option>
+                <option value="Daktaras">Aukštasis universitetinis (daktaro laipsnis)</option>
+                <option value="Magistras">Aukštasis universitetinis (magistro laipsnis)</option>
+                <option value="Bakalauras">Aukštasis universitetinis (bakalauro laispnis)</option>
+                <option value="Profesinis bakalauras">Aukštasis koleginis išsilavinimas (profesinis bakalauras)</option>
+                <option value="Aukštesnysis">Aukštesnysis išsilavinimas</option>
+                <option value="Specialusis vidurinis">Specialusis vidurinis išsilavinimas</option>
+                <option value="Vidurinis">Vidurinis išsilavinimas</option>
+                <option value="Pagrindinis">Pagrindinis išsilavinimas</option>
+                <option value="Pradinis">Pradinis išsilavinimas</option>
                 <option value="Nereglamentuojamas">Nereglamentuojamas</option>
             </select>
             
             <label for="fieldOfStudy">Studijų sritis:</label>
             <select id="fieldOfStudy" name="fieldOfStudy" style="margin-bottom: 20px;" required>
                 <option value="">Pasirinkite...</option>
-                <option value="Gamtos mokslai">Gamtos mokslai</option>
-                <option value="Technologijos mokslai">Technologijos mokslai</option>
-                <option value="Medicinos ir sveikatos mokslai">Medicinos ir sveikatos mokslai</option>
+                <option value="Gamtos">Gamtos mokslai</option>
+                <option value="Technologijos">Technologijos mokslai</option>
+                <option value="Medicinos ir sveikatos">Medicinos ir sveikatos mokslai</option>
                 <option value="Žemės ūkio mokslai">Žemės ūkio mokslai</option>
-                <option value="Socialiniai mokslai">Socialiniai mokslai</option>
-                <option value="Humanitariniai mokslai">Humanitariniai mokslai</option>
+                <option value="Socialiniai">Socialiniai mokslai</option>
+                <option value="Humanitariniai">Humanitariniai mokslai</option>
                 <option value="Scenos ir ekrano menai">Scenos ir ekrano menai</option>
                 <option value="Vaizduojamieji menai">Vaizduojamieji menai</option>
                 <option value="Kita">Kita</option>
@@ -64,30 +65,30 @@
             <label for="interestInTech">Domėjimasis technologijomis:</label>
             <select id="interestInTech" name="interestInTech" style="margin-bottom: 20px;" required>
                 <option value="">Pasirinkite...</option>
-                <option value="very_interested">Labai domiuosi</option>
-                <option value="somewhat_interested">Šiek tiek domiuosi</option>
-                <option value="not_interested">Nedomiuosi</option>
+                <option value="Labai">Labai domiuosi</option>
+                <option value="Šiek tiek">Šiek tiek domiuosi</option>
+                <option value="Nesidomiu">Nesidomiu</option>
             </select>
             
-            <label for="aiExperience">Patirtis su DI:</label>
+            <label for="aiExperience">Patirtis su dirbtiniu intelektu:</label>
             <select id="aiExperience" name="aiExperience" style="margin-bottom: 20px;" required>
                 <option value="">Pasirinkite...</option>
-                <option value="no_experience">Be patirties</option>
-                <option value="beginner">Pradedantysis</option>
-                <option value="intermediate">Pažengęs</option>
-                <option value="advanced">Ekspertas</option>
+                <option value="Neturiu">Be patirties</option>
+                <option value="Pradedantysis">Pradedantysis(-čioji)</option>
+                <option value="Pažengęs">Pažengęs(-usi)</option>
+                <option value="Ekspertas">Ekspertas(-ė)</option>
             </select>
             
-            <label for="attitudeTowardsAi">Požiūris į DI:</label>
+            <label for="attitudeTowardsAi">Požiūris į dirbtinį intelektą:</label>
             <select id="attitudeTowardsAi" name="attitudeTowardsAi" style="margin-bottom: 20px;" required>
                 <option value="">Pasirinkite...</option>
-                <option value="positive">Teigiamas</option>
-                <option value="neutral">Neutralus</option>
-                <option value="negative">Neigiamas</option>
+                <option value="Teigiamas">Teigiamas</option>
+                <option value="Neutralus">Neutralus</option>
+                <option value="Neigiamas">Neigiamas</option>
             </select>
 
             <a href="./select.html">
-                <button class="startButton" type="button" onclick="submitDemographics()" style="font-family: Gabarito; font-weight: bold; margin-top: 20px;">
+                <button class="startButton" type="submit" onclick="submitDemographics()" style="font-family: Gabarito; font-weight: bold; margin-top: 20px;">
                   <img src="assets/icons/controller.png" alt="Controller" style="width: 30px; height: auto;"/>
                   Dabar jau tikrai žaisti
                 </button>
@@ -95,6 +96,6 @@
             
         </form>
     </div>
-    <script src="./js/demographics.js"></script> <!-- Įsitikinkite, kad šis kelias atitinka jūsų failų struktūrą -->
+    <script src="./js/demographics.js"></script> 
 </body>
 </html>

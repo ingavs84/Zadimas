@@ -1,11 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
     const demographicForm = document.getElementById('demographicForm');
+    
+    demographicForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
 
     // Assuming there's a button with the class 'startButton' to submit the form
-    const startButton = document.querySelector('.startButton');
+    /*const startButton = document.querySelector('.startButton');
 
     startButton.addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent the default form submission
+        event.preventDefault(); // Prevent the default form submission*/
+
+        const ageInput = document.getElementById('age');
+        if (!ageInput.checkValidity()) {
+            // If age input is invalid, display an error message or handle it as needed
+            alert("Patikrinkite, ar teisingai nurodėte amžių (skaičiai iki 130).");
+            return; // Exit the function, preventing further execution
+        }    
 
         // Collect the form data
         const demographicsData = {

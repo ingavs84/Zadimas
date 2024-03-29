@@ -6,7 +6,7 @@ export const HotelQuestions = [
         text: "Analizuojant svečių elgseną ir prognozuojant užsakymų srautus",
         isCorrect: true,
         explanation:
-          "Analizuojant svečių elgseną ir prognozuojant užsakymų srautus galima efektyviai optimizuoti rezervacijų sistemą, nustatant optimalius laikotarpius ir kainas.",
+          "Analizuojant svečių elgseną ir prognozuojant užsakymų srautus, galima efektyviai optimizuoti rezervacijų sistemą, nustatant optimalius laikotarpius ir kainas.",
       },
       {
         text: "Pakeičiant rezervacijų sistemą socialiniais tinklais",
@@ -113,7 +113,7 @@ export const HotelQuestions = [
     ],
   },
   {
-    q: "Kaip mašininis mokymasis, įskaitant veido skaitymą, gali būti naudingas žmonių išteklių valdymui viešbučiui 'Hotela'?",
+    q: "Kaip mašininis mokymasis, įskaitant veido skaitymą, gali būti naudingas žmonių išteklių valdymui viešbučiui 'Hotela' (už ES DI Akto veikimo ribų)?",
     a: [
       {
         text: "Automatiškai identifikuoti darbuotojų dalyvavimą įvairiuose renginiuose ir susitikimuose, suteikiant įžvalgų apie jų aktyvumą ir tinkamumą kolektyve.",
@@ -125,7 +125,7 @@ export const HotelQuestions = [
         text: "Stebėti darbuotojų veido išraiškas, siekiant suprasti jų emocinę būseną ir įvertinti bendrą gerovės lygį darbe.",
         isCorrect: true,
         explanation:
-          "Šis variantas suteiktų naudingos informacijos apie bendrą gerovės lygį darbe.",
+          "Šis variantas suteiktų naudingos informacijos apie bendrą gerovės lygį darbe, tačiau gali būti nesuderinamas su ES DI Aktu.",
       },
       {
         text: "Sekti darbuotojų lankomus skyrius ir užduotis, atsižvelgiant į jų veido reakcijas ir koncentracijos lygį.",
@@ -134,7 +134,7 @@ export const HotelQuestions = [
           "Nors veido skaitymas gali teikti tam tikrą informaciją apie veido reakcijas, šis variantas pateikia pernelyg specifinį scenarijų, kuris gali būti perteklinis žmonių išteklių valdymui.",
       },
       {
-        text: "Įvertinti darbuotojų techninius įgūdžius ir gebėjimus remiantis jų veido išraiškomis ir veiklumu",
+        text: "Įvertinti darbuotojų techninius įgūdžius ir gebėjimus, remiantis jų veido išraiškomis ir veiklumu",
         isCorrect: false,
         explanation:
           "Žmogaus veido išraiškos gali būti labai individualios ir ne visada tiesiogiai susijusios su darbuotojų techniniais gebėjimais.",
@@ -380,7 +380,7 @@ export const CarQuestions = [
         text: "Analizuoti darbuotojų emocinę būseną ir pasitenkinimą, remiantis jų tekstiniais atsiliepimais",
         isCorrect: true,
         explanation:
-          "Tekstinė analizė leidžia nustatyti nuotaiką ir atsakymus bei išskirti pagrindines sritis, kurios reikalingos patobulinimui.",
+          "Tekstinė analizė leidžia nustatyti nuotaiką ir atsakymus bei išskirti pagrindines sritis, kurios reikia tobulinti.",
       },
       {
         text: "Aptikti pagrindinius iššūkius, su kuriais susiduria darbuotojai (pvz., logistikos problemos, technologijų naudojimas)",
@@ -400,13 +400,13 @@ export const CarQuestions = [
 
 export const EshopQuestions = [
   {
-    q: "Kaip 'Pirkinių viešnagė' gali naudoti dirbtinį intelektą norėdama geriau suprasti klientų elgseną ir jų pirkimo motyvacijas?",
+    q: "Kaip 'Pirkinių viešnagė' gali naudoti dirbtinį intelektą, norėdama geriau suprasti klientų elgseną ir jų pirkimo motyvacijas?",
     a: [
       {
         text: "Naudojant sentimentų analizę klientų atsiliepimams vertinti",
         isCorrect: true,
         explanation:
-          "Naudojant sentimentų analizę, platforma gali geriau suprasti klientų nuotaikas ir pirkimo motyvus.",
+          "Naudodama sentimentų analizę, platforma gali geriau suprasti klientų nuotaikas ir pirkimo motyvus.",
       },
       {
         text: "Stengiantis pakeisti svetainės spalvų schemą pagal mados tendencijas",
@@ -415,7 +415,7 @@ export const EshopQuestions = [
           "Tai gali būti naudinga marketingo tikslais, bet tai nėra tiesiogiai susiję su klientų elgsenos supratimu.",
       },
       {
-        text: "Sekant, kiek laiko klientai praleidžia skaitydami prekių aprašymus",
+        text: "Sekant, kiek laiko klientai praleidžia, skaitydami prekių aprašymus",
         isCorrect: false,
         explanation:
           "Tai nėra tiesioginė DI taikymo sritis klientų elgsenos supratimui.",
@@ -435,7 +435,7 @@ export const EshopQuestions = [
         text: "Siūlant vartotojams virtualius 'fitting' kambarius",
         isCorrect: true,
         explanation:
-          "Siūlant vartotojams virtualius 'fitting' kambarius, platforma gali padėti sumažinti klaidingų pirkimų atvejų skaičių.",
+          "Siūlydama vartotojams virtualius 'fitting' kambarius, platforma gali padėti sumažinti klaidingų pirkimų atvejų skaičių.",
       },
       {
         text: "Nustatant, kokias prekes klientai dažniausiai perka kartu",
@@ -511,7 +511,7 @@ export const EshopQuestions = [
         text: "Keičiant platformos pavadinimą kas savaitę",
         isCorrect: false,
         explanation:
-          "Pavadinimo keitimas kas savaitę gali sukelti painiavą tarp klientų ir prarasti prekinio ženklo vertę.",
+          "Pavadinimo keitimas kas savaitę gali sukelti painiavą tarp klientų ir prekės ženklo vertės sumažėjimą.",
       },
     ],
   },
@@ -519,7 +519,7 @@ export const EshopQuestions = [
     q: "Kaip dirbtinis intelektas gali būti panaudotas efektyviai segmentuoti 'Pirkinių Viešnagės' rinką ir personalizuoti marketingo žinutes?",
     a: [
       {
-        text: "Naudodamas geografinius duomenis išskirti regionines rinkas",
+        text: "Naudodamas geografinius duomenis, DI gali išskirti regionines rinkas",
         isCorrect: false,
         explanation:
           "Čia reikėtų naudoti geografinės informacijos sistemas (GIS) ir vietovės pagrindu veikiančius DI algoritmus.",
@@ -559,21 +559,21 @@ export const EshopQuestions = [
           "Tai būtų netinkama naudojimo situacija, nes NLP tik turėtų pagerinti vartotojo patirtį, o ne pakenkti ar apriboti ją.",
       },
       {
-        text: "Neįtakoja bendravimo su asistentu",
+        text: "Neturi įtakos bendravimui su asistentu",
         isCorrect: false,
         explanation:
-          "Natūralios kalbos apdorojimas būtent priešingai - suteikia galimybę efektyviau bendrauti su virtualiu asistentu, o ne riboja ar neįgalina šio bendravimo.",
+          "Natūralios kalbos apdorojimas, būtent priešingai, suteikia galimybę efektyviau bendrauti su virtualiu asistentu, o ne riboja ar neįgalina šio bendravimo.",
       },
       {
         text: "Sukelia painiavą ir neaiškumą vartotojui bendraujant su asistentu",
         isCorrect: false,
         explanation:
-          "Tai yra dažniausiai būdinga netinkamai arba netinkamai sukonfigūruotoms NLP sistemoms",
+          "Tai yra dažniausiai būdinga netinkamai sukonfigūruotoms NLP sistemoms",
       },
     ],
   },
   {
-    q: "Kaip 'Pirkinių viešnagė' galėtų efektyviai panaudoti dirbtinio intelekto (DI) strategijas atsargų valdymui optimizuoti, ypač turint omenyje ribotus resursus ir didelę konkurenciją?",
+    q: "Kaip 'Pirkinių viešnagė' galėtų efektyviai panaudoti dirbtinio intelekto (DI) strategijas atsargų valdymui optimizuoti, ypač turint omenyje ribotus išteklius ir didelę konkurenciją?",
     a: [
       {
         text: "Taikyti prognozavimo analizę, naudojant mašininio mokymosi algoritmus, norint nustatyti optimalius atsargų lygius.",

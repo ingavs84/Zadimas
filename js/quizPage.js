@@ -67,7 +67,7 @@ function evaluateAnswer(userSelection) {
 
   if (selectedAnswer.innerText === correctAnswer.text) {
       isCorrect = true;
-      score++; // Increment the score if the answer is correct
+      score++; 
   }
 
   // Store the question and answer details in the playerAnswers array using the questionIndex as an identifier
@@ -147,8 +147,8 @@ function loadResults() {
   }
 
   const resultsData = {
-      playerID: playerID, // Include the unique player ID
-      selectedCategory: selectedCategory, // Use the selectedCategory variable that's been set globally
+      playerID: playerID, 
+      selectedCategory: selectedCategory, 
       demographics: demographicsData,
       answers: playerAnswers.map(answer => ({
           questionText: answer.questionText,
@@ -158,7 +158,6 @@ function loadResults() {
       finalScore: score
   };
 
-  // Replace 'YOUR_WEB_APP_URL' with the URL you copied after deploying your web app
   fetch('https://script.google.com/macros/s/AKfycbwwd9VtZufoT6YOh3-7FBC8s9F98bgVLEWXCksshHnDaWi6gDcz3NPb6MGyVv2xPe7p6w/exec', {
       method: 'POST',
       mode: 'no-cors', // Note: Using 'no-cors' mode might limit your ability to read the response
@@ -170,7 +169,6 @@ function loadResults() {
   .then(() => console.log('Data successfully sent to Google Sheets', resultsData))
   .catch(error => console.error('Error sending data:', error));
 
-  // Below this line, keep your existing code that displays the quiz results to the user
   const htmlBlock = document.querySelector(".questionBlock");
   const resultHeader = document.createElement("h1");
   resultHeader.classList.add("mainText");
@@ -181,15 +179,15 @@ function loadResults() {
   results.innerText = `${score} / ${Questions.length}`;
 
   if (score < Questions.length / 2) {
-    resultHeader.innerText = "Gaila, bet nepavyko";
-    resultHeader.style.color = "#FF3131"; // Or use redColor variable if defined
-    message.innerText = "Tau dar trūksta žinių dirbtinio intelekto sferoje. Galbūt norėtum išbandyti savo žinias iš naujo?";
-    results.style.color = "#FF3131"; // Or use redColor variable if defined
+    resultHeader.innerText = "Gaila, bet šįkart nepavyko.";
+    resultHeader.style.color = "#FF3131"; 
+    message.innerText = "Tau dar trūksta žinių dirbtinio intelekto srityje. Galbūt norėtum pabadyti vėl ir sužinoti dar daugiau?";
+    results.style.color = "#FF3131"; 
   } else {
     resultHeader.innerText = "Sveikiname!";
-    resultHeader.style.color = "#1BB655"; // Or use greenColor variable if defined
-    message.innerText = "Tu įrodei, jog turi geras žinias apie dirbtinio intelekto taikymą verslo procesuose. Jeigu nori, gali žaidimą sužaisti dar kartą";
-    results.style.color = "#1BB655"; // Or use greenColor variable if defined
+    resultHeader.style.color = "#1BB655"; 
+    message.innerText = "Tu įrodei, kas išmanai apie dirbtinio intelekto taikymą verslo procesuose. Jeigu nori, gali žaidimą sužaisti dar kartą";
+    results.style.color = "#1BB655"; 
   }
 
   const exitButtons = document.createElement("div");
@@ -204,8 +202,8 @@ function loadResults() {
 
   restartButton.classList.add("basicButton", "smallerButtons");
   homeButton.classList.add("basicButton", "smallerButtons");
-  restartButton.style.backgroundColor = "#FF3131"; // Or use redColor variable if defined
-  homeButton.style.backgroundColor = "#f13ea7"; // Or use pinkColor variable if defined
+  restartButton.style.backgroundColor = "#FF3131"; 
+  homeButton.style.backgroundColor = "#f13ea7"; 
 
   restartButton.innerText = "Žaisti dar kartą";
   homeButton.innerText = "Grįžti atgal";
