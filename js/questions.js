@@ -125,7 +125,7 @@ export const HotelQuestions = [
         text: "Stebėti darbuotojų veido išraiškas, siekiant suprasti jų emocinę būseną ir įvertinti bendrą gerovės lygį darbe.",
         isCorrect: true,
         explanation:
-          "Šis variantas suteiktų naudingos informacijos apie bendrą gerovės lygį darbe, tačiau gali būti nesuderinamas su ES DI Aktu.",
+          "Šis variantas suteiktų naudingos informacijos apie bendrą gerovės lygį darbe.",
       },
       {
         text: "Sekti darbuotojų lankomus skyrius ir užduotis, atsižvelgiant į jų veido reakcijas ir koncentracijos lygį.",
