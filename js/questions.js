@@ -15,7 +15,7 @@ export const HotelQuestions = [
           "Socialiniai tinklai tiesiogiai nesumažina rezervacijų proceso sudėtingumo.",
       },
       {
-        text: "Leidžiant svečiams atsiųsti asmeninius pageidavimus per žinutes",
+        text: "Leidžiant atsiųsti asmeninius pageidavimus per žinutes",
         isCorrect: false,
         explanation: "Tai nėra rezervacijų valdymo įrankis.",
       },
@@ -113,10 +113,10 @@ export const HotelQuestions = [
     ],
   },
   {
-    q: "Kaip mašininis mokymasis, įskaitant veido skaitymą, gali būti naudingas žmonių išteklių valdymui viešbučiui 'Hotela' (už ES DI Akto veikimo ribų)?",
+    q: "Kaip mašininis mokymasis, įskaitant veido skaitymą, naudingas žmonių išteklių valdymui (už ES DI Akto veikimo ribų)?",
     a: [
       {
-        text: "Automatiškai identifikuoti darbuotojų dalyvavimą įvairiuose renginiuose ir susitikimuose, suteikiant įžvalgų apie jų aktyvumą ir tinkamumą kolektyve.",
+        text: "Automatiškai identifikuoti darbuotojų dalyvavimą renginiuose ir susitikimuose, suteikiant įžvalgų apie jų aktyvumą ir tinkamumą kolektyve.",
         isCorrect: false,
         explanation:
           "Tai labiau susiję su darbuotojų fizinio buvimo vietos stebėjimu, o ne tiesiogiai su žmonių išteklių valdymu ar jų gerovės vertinimu.",
@@ -142,7 +142,7 @@ export const HotelQuestions = [
     ],
   },
   {
-    q: "Kuri dirbtinio intelekto technika gali būti naudojama viešbučio finansinių pasiekimų prognozavimui?",
+    q: "Kuri DI technika gali būti naudojama viešbučio finansinių pasiekimų prognozavimui?",
     a: [
       {
         text: "Skatinamasis mokymasis (reinforcement learning)",
@@ -339,7 +339,7 @@ export const CarQuestions = [
     ],
   },
   {
-    q: "Į kokį išorinį veiksnį įmonė turėtų labiausiai atsižvelgti, integruodama DI ir siekdama atitikti aplinkosaugos reikalavimus?",
+    q: "Į ką įmonė turėtų labiausiai atsižvelgti, integruodama DI ir siekdama atitikti aplinkosaugos reikalavimus?",
     a: [
       {
         text: "Spaudimas mažinti CO2 emisijas",
@@ -368,7 +368,7 @@ export const CarQuestions = [
     ],
   },
   {
-    q: "Kaip pasinaudoti natūralios kalbos apdorojimu (NLP) analizuojant tekstinius duomenis, siekiant geriau suprasti darbuotojų patirtį ir poreikius darbo vietoje?",
+    q: "Kaip pasinaudoti natūralios kalbos apdorojimu (NLP), siekiant geriau suprasti darbuotojų patirtį ir poreikius darbo vietoje?",
     a: [
       {
         text: "Identifikuoti pagrindinius darbuotojų nusiskundimus dėl gamybos procesų efektyvumo",
@@ -400,7 +400,7 @@ export const CarQuestions = [
 
 export const EshopQuestions = [
   {
-    q: "Kaip 'Pirkinių viešnagė' gali naudoti DI, norėdama geriau suprasti klientų elgseną ir jų pirkimo motyvacijas?",
+    q: "Kaip 'Pirkinių viešnagė' gali naudoti DI, norėdama geriau suprasti klientų elgseną?",
     a: [
       {
         text: "Naudojant sentimentų analizę klientų atsiliepimams vertinti",
@@ -605,7 +605,7 @@ export const EshopQuestions = [
 
 export const HospitalQuestions = [
   {
-    q: "Kaip dirbtinis intelektas gali padėti 'Medikai' efektyviau valdyti pacientų srautus?",
+    q: "Kaip DI gali padėti 'Medikai' efektyviau valdyti pacientų srautus?",
     a: [
       {
         text: "Analizuojant vizitų duomenis ir prognozuojant didžiausias apkrovas",
