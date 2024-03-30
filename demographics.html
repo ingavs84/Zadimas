@@ -5,7 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Demografinės Informacijos Anketa</title>
     <link rel="stylesheet" href="./css/generalStyles.css"> 
-    <link rel="stylesheet" href="./css/demographicsPage.css"> 
+    <link rel="stylesheet" href="./css/demographicsPage.css">
+
+    <style>
+        .consent-information p {
+            font-size: 14px; /* Mažesnis teksto dydis */
+        }
+        .consent-information a {
+            color: #8a2be2; /* Violetinė spalva */
+            text-decoration: underline; /* Pabrėžiama, kad tai nuoroda */
+        }
+        .startButton {
+            background-color: #8a2be2; /* Mygtuko spalva */
+            /* Kitas mygtuko stilius */
+        }
+    </style>
+
 </head>
 <body>
     <div class="logo">
@@ -16,7 +31,7 @@
         <p style="font-size: 15px; font-style: italic; margin-bottom: 30px;">Jūsų pateikiami duomenys yra visiškai anoniminiai ir naudojami tik statistikos ir mokslinių tyrimų tikslais</p>
         <form id="demographicForm">
             <label for="age">Amžius:</label>
-            <input type="number" id="age" name="age" min="0" max="130" pattern="[0-9]+([.,][0-9]+)?" style="margin-bottom: 20px;" required>
+            <input type="number" id="age" name="age" min="18" max="130" pattern="[0-9]+([.,][0-9]+)?" style="margin-bottom: 20px;" required>
             
             <label for="gender">Lytis:</label>
             <select id="gender" name="gender" style="margin-bottom: 20px;" required>
@@ -86,13 +101,19 @@
                 <option value="Neutralus">Neutralus</option>
                 <option value="Neigiamas">Neigiamas</option>
             </select>
-
-            <a href="./select.html">
+                      
+            <!-- <a href="./select.html">
                 <button class="startButton" type="submit" onclick="submitDemographics()" style="font-family: Gabarito; font-weight: bold; margin-top: 20px;">
                   <img src="assets/icons/controller.png" alt="Controller" style="width: 30px; height: auto;"/>
                   Dabar jau tikrai žaisti
                 </button>
-              </a>
+              </a> -->
+
+              <div class="consent-information" style="margin-bottom: 20px;">
+                <p>Spausdami „Pateikti ir žaisti“, sutinkate su mūsų <a href="privacyPolicy.html">privatumo politika</a> ir duodate sutikimą rinkti ir naudoti Jūsų pateiktus duomenis mokslinių tyrimų ir sklaidos bei statistikos tikslais.</p>
+              </div>
+
+              <button class="startButton" onclick="submitDemographics()">Pateikti ir žaisti</button>
             
         </form>
     </div>

@@ -82,18 +82,7 @@ input[type="range"] {
       background-color: var(--blue);
     }
   }
-/*
-button {
-    background-color: #800080; /* Purple color for button
-    color: white;
-    padding: 10px 20px;
-    margin-top: 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-}
-*/
+
 button:hover {
     background-color: darken(#800080, 10%);
 }

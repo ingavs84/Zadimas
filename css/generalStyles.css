@@ -23,3 +23,9 @@ body {
   overflow: hidden;
   height: 100vh;
 }
+
+.violet-link {
+  color: #8a2be2; /* Nustatoma konkrečių nuorodų spalva */
+  cursor: pointer;
+  text-decoration: underline; /* Pabrėžiamas tekstas */
+}
