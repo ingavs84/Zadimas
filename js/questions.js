@@ -311,7 +311,7 @@ export const CarQuestions = [
     ],
   },
   {
-    q: "Kokios didžiausios išlaidos, su kuriomis susidurs 'Automanija' diegdama DI į savo veiklą?",
+    q: "Kokios didžiausios išlaidos, su kuriomis susidurs 'Automanija', diegdama DI?",
     a: [
       {
         text: "Programinės įrangos licencijavimas ir atnaujinimai",
@@ -339,7 +339,7 @@ export const CarQuestions = [
     ],
   },
   {
-    q: "Į kokį išorinį veiksnį automobilių pramonės įmonė turėtų labiausiai atsižvelgti, integruodama dirbtinį intelektą, siekdama atitikti aplinkosaugos reikalavimus?",
+    q: "Į kokį išorinį veiksnį įmonė turėtų labiausiai atsižvelgti, integruodama DI ir siekdama atitikti aplinkosaugos reikalavimus?",
     a: [
       {
         text: "Spaudimas mažinti CO2 emisijas",
@@ -368,7 +368,7 @@ export const CarQuestions = [
     ],
   },
   {
-    q: "Kaip galima pasinaudoti natūralios kalbos apdorojimu (NLP) analizuojant tekstinius duomenis automobilių gamykloje, siekiant geriau suprasti darbuotojų patirtį ir poreikius darbo vietoje?",
+    q: "Kaip pasinaudoti natūralios kalbos apdorojimu (NLP) analizuojant tekstinius duomenis, siekiant geriau suprasti darbuotojų patirtį ir poreikius darbo vietoje?",
     a: [
       {
         text: "Identifikuoti pagrindinius darbuotojų nusiskundimus dėl gamybos procesų efektyvumo",
@@ -400,7 +400,7 @@ export const CarQuestions = [
 
 export const EshopQuestions = [
   {
-    q: "Kaip 'Pirkinių viešnagė' gali naudoti dirbtinį intelektą, norėdama geriau suprasti klientų elgseną ir jų pirkimo motyvacijas?",
+    q: "Kaip 'Pirkinių viešnagė' gali naudoti DI, norėdama geriau suprasti klientų elgseną ir jų pirkimo motyvacijas?",
     a: [
       {
         text: "Naudojant sentimentų analizę klientų atsiliepimams vertinti",
@@ -429,7 +429,7 @@ export const EshopQuestions = [
     ],
   },
   {
-    q: "Kokiu būdu dirbtinis intelektas gali padėti 'Pirkinių viešnagei' sumažinti grąžinimo ir keitimo atvejus?",
+    q: "Kokiu būdu DI gali padėti 'Pirkinių viešnagei' sumažinti grąžinimo ir keitimo atvejus?",
     a: [
       {
         text: "Siūlant vartotojams virtualius 'fitting' kambarius",
@@ -458,7 +458,7 @@ export const EshopQuestions = [
     ],
   },
   {
-    q: "Kaip dirbtinis intelektas gali padėti 'Pirkinių viešnagei' geriau suprasti savo klientų poreikius?",
+    q: "Kaip DI gali padėti 'Pirkinių viešnagei' geriau suprasti savo klientų poreikius?",
     a: [
       {
         text: "Analizuojant pardavimų duomenis ir prognozuojant populiariausias prekes",
@@ -516,7 +516,7 @@ export const EshopQuestions = [
     ],
   },
   {
-    q: "Kaip dirbtinis intelektas gali būti panaudotas efektyviai segmentuoti 'Pirkinių Viešnagės' rinką ir personalizuoti marketingo žinutes?",
+    q: "Kaip DI gali būti panaudotas efektyviai segmentuoti 'Pirkinių Viešnagės' rinką ir personalizuoti marketingo žinutes?",
     a: [
       {
         text: "Naudodamas geografinius duomenis, DI gali išskirti regionines rinkas",
@@ -573,7 +573,7 @@ export const EshopQuestions = [
     ],
   },
   {
-    q: "Kaip 'Pirkinių viešnagė' galėtų efektyviai panaudoti dirbtinio intelekto (DI) strategijas atsargų valdymui optimizuoti, ypač turint omenyje ribotus išteklius ir didelę konkurenciją?",
+    q: "Kaip įmonė galėtų efektyviai panaudoti DI atsargų valdymui optimizuoti, ypač turint omenyje ribotus išteklius ir didelę konkurenciją?",
     a: [
       {
         text: "Taikyti prognozavimo analizę, naudojant mašininio mokymosi algoritmus, norint nustatyti optimalius atsargų lygius.",
@@ -634,7 +634,7 @@ export const HospitalQuestions = [
     ],
   },
   {
-    q: "Kaip DI gali pagerinti diagnostikos tikslumą 'Sveikatos priežiūros įstaigoje'?",
+    q: "Kaip DI gali pagerinti diagnostikos tikslumą 'Medikoje'?",
     a: [
       {
         text: "Siūlant gydytojams mokymus apie naujausias medicinos tendencijas",
@@ -663,7 +663,7 @@ export const HospitalQuestions = [
     ],
   },
   {
-    q: "Kaip 'Medika' gali naudoti dirbtinį intelektą individualizuotam gydymui?",
+    q: "Kaip 'Medika' gali naudoti DI individualizuotam gydymui?",
     a: [
       {
         text: "Naudoti genetinius duomenis prognozuojant ligų riziką ir rekomenduojant prevencines priemones",
@@ -692,7 +692,7 @@ export const HospitalQuestions = [
     ],
   },
   {
-    q: "Kaip dirbtinis intelektas gali padėti valdyti sveikatos priežiūros įstaigos klientų kredito riziką, teikiant jiems mokamas paslaugas?",
+    q: "Kaip DI gali padėti valdyti sveikatos priežiūros įstaigos klientų kredito riziką, teikiant jiems mokamas paslaugas?",
     a: [
       {
         text: "Automatizuojant klientų aptarnavimą",
@@ -721,7 +721,7 @@ export const HospitalQuestions = [
     ],
   },
   {
-    q: "Kokiu būdu dirbtinis intelektas gali padėti 'Medikai' geriau suprasti ir reaguoti į klientų nuomonę ir atsiliepimus apie jų teikiamas medicinos paslaugas?",
+    q: "Kaip DI gali padėti geriau suprasti ir reaguoti į klientų nuomonę ir atsiliepimus apie jų teikiamas medicinos paslaugas?",
     a: [
       {
         text: "Apsiribojant tik tradicinėmis rinkos tyrimo metodais.",
@@ -750,7 +750,7 @@ export const HospitalQuestions = [
     ],
   },
   {
-    q: "Kaip gilūs neuroniniai tinklai gali pakeisti vartotojo patirtį lankantis 'Medika' klinikos procedūrose?",
+    q: "Kaip gilūs neuroniniai tinklai gali pakeisti vartotojo patirtį lankantis 'Medikos' procedūrose?",
     a: [
       {
         text: "Pateikti personalizuotus pasiūlymus pagal paciento diagnozę ir ligų istoriją",
@@ -779,7 +779,7 @@ export const HospitalQuestions = [
     ],
   },
   {
-    q: "Kaip dirbtinis intelektas gali būti panaudotas 'Medika' atsargų prognozavime?",
+    q: "Kaip DI gali būti panaudotas 'Medika' atsargų prognozavime?",
     a: [
       {
         text: "Nustatant ateities politinius pokyčius",
