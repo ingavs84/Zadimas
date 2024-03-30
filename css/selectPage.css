@@ -25,7 +25,7 @@ main {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 0.5fr, 1fr;
-  
+
   @media (max-width: 850px) {
     grid-template-columns: 1fr;
   }
